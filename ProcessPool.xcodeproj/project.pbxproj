@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A6BD30A21AE7B5F500271110 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6BD30A11AE7B5F500271110 /* main.cpp */; };
 		A6BD30A41AE7B5F600271110 /* ProcessPool.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6BD30A31AE7B5F600271110 /* ProcessPool.1 */; };
+		A6BD30AC1AE7B6B800271110 /* Process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6BD30AA1AE7B6B800271110 /* Process.cpp */; };
+		A6BD30AF1AE7BBC000271110 /* MessageQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6BD30AD1AE7BBC000271110 /* MessageQueue.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,10 @@
 		A6BD309E1AE7B5F500271110 /* ProcessPool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ProcessPool; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BD30A11AE7B5F500271110 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A6BD30A31AE7B5F600271110 /* ProcessPool.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ProcessPool.1; sourceTree = "<group>"; };
+		A6BD30AA1AE7B6B800271110 /* Process.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Process.cpp; sourceTree = "<group>"; };
+		A6BD30AB1AE7B6B800271110 /* Process.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Process.h; sourceTree = "<group>"; };
+		A6BD30AD1AE7BBC000271110 /* MessageQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MessageQueue.cpp; sourceTree = "<group>"; };
+		A6BD30AE1AE7BBC000271110 /* MessageQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageQueue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 			children = (
 				A6BD30A11AE7B5F500271110 /* main.cpp */,
 				A6BD30A31AE7B5F600271110 /* ProcessPool.1 */,
+				A6BD30AA1AE7B6B800271110 /* Process.cpp */,
+				A6BD30AB1AE7B6B800271110 /* Process.h */,
+				A6BD30AD1AE7BBC000271110 /* MessageQueue.cpp */,
+				A6BD30AE1AE7BBC000271110 /* MessageQueue.h */,
 			);
 			path = ProcessPool;
 			sourceTree = "<group>";
@@ -118,6 +128,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6BD30A21AE7B5F500271110 /* main.cpp in Sources */,
+				A6BD30AF1AE7BBC000271110 /* MessageQueue.cpp in Sources */,
+				A6BD30AC1AE7B6B800271110 /* Process.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
