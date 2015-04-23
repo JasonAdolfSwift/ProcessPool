@@ -9,33 +9,31 @@
 #include <iostream>
 #include "Process.h"
 #include "MessageQueue.h"
+#include "ShareMemory.h"
 
 using namespace std;
 
-void fun(int a, int b, int c)
-{
-    cout << a << " " << b << " " << c << endl;
-}
-
 void test()
 {
-    MessageQueue q;
-    q.createMsgQueue(1234, 0640);
-    MMsg msg;
-    if(q.msgRecv(&msg, sizeof(msg), Process::getPid()) == 0)
-        cout << "no data" << endl;
-    cout << msg.mText << endl;
+    ShareMemory s;
+    cout << s.createShareMemory(1234, 400) << endl;
+    char *addr = (char *)s.getMemoryAddress();
+    cout << addr << endl;
+    sleep(3);
+    cout << s.createShareMemory(1245, 450) << endl;
+    cout << (char *)s.getMemoryAddress() << endl;
 }
 
 int main(int argc, const char * argv[])
 {
-    MessageQueue q;
-    q.createMsgQueue(1234, 0640);
-    Process::ProcessId pid = Process::newInstance(test);
-    MMsg msg;
-    msg.type = pid;
-    strcpy(msg.mText, "Hello world");
-    q.msgSend(&msg, 0);
+    Process::newInstance(test);
+    ShareMemory s;
+    cout << s.createShareMemory(1234, 400) << endl;
+    strcpy((char *)s.getMemoryAddress(), "Hello wo ca");
+    strcat((char *)s.getMemoryAddress(), " wo le ge qu");
+    sleep(3);
+    cout << s.createShareMemory(1245, 450) << endl;
+    strcpy((char *)s.getMemoryAddress(), "heheheheheheh");
     wait(NULL);
     return 0;
 }

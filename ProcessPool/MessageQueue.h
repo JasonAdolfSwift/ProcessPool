@@ -37,7 +37,7 @@ public:
     
 public:
     MsqId createMsgQueue(MsqKey key, AccessPerm perm = 0640);
-    bool isMsqExist(MsqKey key);
+    static bool isMsqExist(MsqKey key);
     bool closeMsgQueue();
     const MsqId &getMsqId() const;
     const MsqKey &getMsqKey() const;
