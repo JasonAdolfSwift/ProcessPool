@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6AD61591AE9DFC2003E9FA0 /* ProcessPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6AD61571AE9DFC2003E9FA0 /* ProcessPool.cpp */; };
 		A6AF80411AE9084600952C0E /* ShareMemory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6AF803F1AE9084600952C0E /* ShareMemory.cpp */; };
 		A6BD30A21AE7B5F500271110 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6BD30A11AE7B5F500271110 /* main.cpp */; };
 		A6BD30A41AE7B5F600271110 /* ProcessPool.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6BD30A31AE7B5F600271110 /* ProcessPool.1 */; };
@@ -28,6 +29,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A6AD61571AE9DFC2003E9FA0 /* ProcessPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProcessPool.cpp; sourceTree = "<group>"; };
+		A6AD61581AE9DFC2003E9FA0 /* ProcessPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessPool.h; sourceTree = "<group>"; };
+		A6AD615B1AE9E077003E9FA0 /* ProcessTaskQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessTaskQueue.h; sourceTree = "<group>"; };
 		A6AF803F1AE9084600952C0E /* ShareMemory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShareMemory.cpp; sourceTree = "<group>"; };
 		A6AF80401AE9084600952C0E /* ShareMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMemory.h; sourceTree = "<group>"; };
 		A6BD309E1AE7B5F500271110 /* ProcessPool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ProcessPool; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +81,9 @@
 				A6BD30AE1AE7BBC000271110 /* MessageQueue.h */,
 				A6AF803F1AE9084600952C0E /* ShareMemory.cpp */,
 				A6AF80401AE9084600952C0E /* ShareMemory.h */,
+				A6AD61571AE9DFC2003E9FA0 /* ProcessPool.cpp */,
+				A6AD61581AE9DFC2003E9FA0 /* ProcessPool.h */,
+				A6AD615B1AE9E077003E9FA0 /* ProcessTaskQueue.h */,
 			);
 			path = ProcessPool;
 			sourceTree = "<group>";
@@ -134,6 +141,7 @@
 			files = (
 				A6AF80411AE9084600952C0E /* ShareMemory.cpp in Sources */,
 				A6BD30A21AE7B5F500271110 /* main.cpp in Sources */,
+				A6AD61591AE9DFC2003E9FA0 /* ProcessPool.cpp in Sources */,
 				A6BD30AF1AE7BBC000271110 /* MessageQueue.cpp in Sources */,
 				A6BD30AC1AE7B6B800271110 /* Process.cpp in Sources */,
 			);

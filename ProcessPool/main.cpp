@@ -10,31 +10,57 @@
 #include "Process.h"
 #include "MessageQueue.h"
 #include "ShareMemory.h"
+#include "ProcessPool.h"
+#include "ProcessTaskQueue.h"
 
 using namespace std;
 
-void test()
+/* 只能使用内置类型 */
+struct Task
 {
-    ShareMemory s;
-    cout << s.createShareMemory(1234, 400) << endl;
-    char *addr = (char *)s.getMemoryAddress();
-    cout << addr << endl;
-    sleep(3);
-    cout << s.createShareMemory(1245, 450) << endl;
-    cout << (char *)s.getMemoryAddress() << endl;
+    Task() {}
+    Task(int a, int b) : a(a), b(b) {}
+    void show()
+    {
+        cout << a << " " << b << endl;
+    }
+    int a;
+    int b;
+};
+
+void test(Task &task)
+{
+    task.show();
 }
 
-int main(int argc, const char * argv[])
+void process(ProcessPool<decltype(test) *, Task, 9> &pool)
 {
-    Process::newInstance(test);
-    ShareMemory s;
-    cout << s.createShareMemory(1234, 400) << endl;
-    strcpy((char *)s.getMemoryAddress(), "Hello wo ca");
-    strcat((char *)s.getMemoryAddress(), " wo le ge qu");
-    sleep(3);
-    cout << s.createShareMemory(1245, 450) << endl;
-    strcpy((char *)s.getMemoryAddress(), "heheheheheheh");
-    wait(NULL);
+    sleep(1);
+    Wrap<decltype(test) *, Task> wp;
+    cout << pool.size() << endl;
+    cout << pool.getTask(wp) << endl;
+    wp.func(wp.args);
+}
+
+void process2(ProcessPool<decltype(test) *, Task, 9> &pool)
+{
+    sleep(2);
+    Wrap<decltype(test) *, Task> wp;
+    pool.getTask(wp);
+    wp.func(wp.args);
+}
+
+int main(int argc, const char *argv[])
+{
+    ProcessPool<decltype(test) *, Task, 9> pool;
+    Process child1;
+    Process child2;
+    cout << child1.open(process, pool) << endl;
+    cout << child2.open(process2, pool) << endl;
+    pool.addTask(Wrap<decltype(test) *, Task>(&test, Task(3, 4)));
+    pool.addTask(Wrap<decltype(test) *, Task>(&test, Task(5, 7)));
+    child1.waitChild();
+    child2.waitChild();
     return 0;
 }
 

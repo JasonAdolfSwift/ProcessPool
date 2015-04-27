@@ -18,6 +18,26 @@ Process::ProcessId Process::getPPid()
     return getppid();
 }
 
+Process::ProcessId Process::waitChild(Status *status, WaitOption opt)
+{
+    return Process::waitPid(getChildId(), status, opt);
+}
+
+Process::ProcessId Process::getChildId()
+{
+    return _id;
+}
+
+bool Process::killChild()
+{
+    return kill(getChildId(), SIGKILL);
+}
+
+bool Process::kill(ProcessId id, SignalType sig)
+{
+    return ::kill(id, sig) == 0;
+}
+
 Process::ProcessId Process::wait(Status *status)
 {
     return ::wait(status);
