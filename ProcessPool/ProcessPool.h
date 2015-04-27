@@ -32,10 +32,6 @@ public:
 public:
     bool addTask(const Wrap<Func, Args> &wrap);
     bool getTask(Wrap<Func, Args> &wrap);
-    unsigned long size()
-    {
-        return _queue->size();
-    }
     
 private:
     ProcessTaskQueue<Wrap<Func, Args>, MaxSize> *_queue;

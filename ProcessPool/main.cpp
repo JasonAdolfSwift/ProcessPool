@@ -37,7 +37,6 @@ void process(ProcessPool<decltype(test) *, Task, 9> &pool)
 {
     sleep(1);
     Wrap<decltype(test) *, Task> wp;
-    cout << pool.size() << endl;
     cout << pool.getTask(wp) << endl;
     wp.func(wp.args);
 }
